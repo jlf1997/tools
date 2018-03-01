@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.jlf1997</groupId>
+  <artifactId>tools</artifactId>
+  <version>0.0.1</version>
+  <packaging>jar</packaging>
+
+  <name>tools</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.encoding>UTF-8</project.encoding>
+	<java.version>1.8</java.version>
+	<junit.version>4.12</junit.version>	
+	<gson.version>2.2.4</gson.version>		
+	<guava.version>23.0</guava.version>	
+  </properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<executions>
+						<execution>
+							<goals>
+								<goal>integration-test</goal>
+								<goal>verify</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<encoding>${project.encoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<encoding>${project.encoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${plugin.javadoc.version}</version>
+					<configuration>
+						<encoding>${project.encoding}</encoding>
+						<aggregate>true</aggregate>
+						<charset>${project.encoding}</charset>
+						<docencoding>${project.encoding}</docencoding>
+					</configuration>
+				</plugin>				 
+			</plugins>
+		</pluginManagement>
+	</build>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+     <dependency>
+		<groupId>com.google.guava</groupId>
+		<artifactId>guava</artifactId>
+		<version>${guava.version}</version>	
+	</dependency>
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>	
+	    <version>${gson.version}</version>	  
+	</dependency>
+  </dependencies>
+</project>
